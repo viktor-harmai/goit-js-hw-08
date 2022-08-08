@@ -21,8 +21,6 @@ function onFormInput(evt) {
     message: refs.textareaEl.value,
   };
 
-  formData = inputData;
-
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inputData));
 }
 
