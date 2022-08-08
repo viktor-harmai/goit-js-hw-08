@@ -13,6 +13,6 @@ function onPlay(data) {
   localStorage.setItem('videoplayer-current-time', data.seconds);
 }
 
-// возобновляем воспроизведения с сохраненной позиции.
+// возобновляем воспроизведения с сохраненной позиции или с начала если в при пустом хранилище .
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0);

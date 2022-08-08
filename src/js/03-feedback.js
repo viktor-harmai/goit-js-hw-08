@@ -7,7 +7,6 @@ const refs = {
 };
 
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
-let formData = {};
 
 populateFormInput();
 
@@ -47,15 +46,8 @@ function populateFormInput() {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
-  const { email, message } = evt.target.elements;
-  //console.log({ email, message });
-  const messageAlert = 'Please fill in all the fields!';
+  console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
 
-  if (email.value === '' || message.value === '') {
-    return alert(messageAlert);
-  }
-
-  console.log(formData);
   evt.currentTarget.reset();
   localStorage.removeItem(LOCAL_STORAGE_KEY);
 }
